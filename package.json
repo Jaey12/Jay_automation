@@ -1,0 +1,25 @@
+{
+  "name": "git_actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kavin",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1",
+    "neat-csv": "^5.2.0",
+    "node-xlsx": "^0.24.0",
+    "xpath": "^0.0.34"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "pg": "^8.13.0",
+    "xlsx": "^0.18.5"
+  }
+}
