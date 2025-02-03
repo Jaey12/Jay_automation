@@ -1,0 +1,17 @@
+[
+   {
+      "url":"https://register.rediff.com/register/register.php?FormName=user_details",
+      "fullName":"John Doe",
+      "rediffmailID":"johndoe123smailbox",
+      "password":"Test@123",
+      "Retypepassword":"Test@123",
+      "alternateEmail":"johndoe@example.com",
+      "mobileNumber":"9876543210",
+      "day":"02",
+      "month":"JAN",
+      "year":"2010",
+      "gender":"Male",
+      "country":"India",
+      "city":"Chennai"
+   }
+]

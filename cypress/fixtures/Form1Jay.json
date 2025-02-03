@@ -1,0 +1,16 @@
+[
+   {
+      "url":"http://mytestingthoughts.com/Sample/home.html",
+      "FirstName":"Jay",
+      "LastName":"Surya",
+      "Gender":"Male",
+      "Hobbies":"Reading ,Singing",
+      "Department":"MCR",
+      "Username":"qwerty123",
+      "Password":"Goodone1",
+      "ConfirmPassword":"Goodone1",
+      "EMail":"xyz@test.com",
+      "ContactNo":"(639)1234567",
+      "AdditionalInfo":"NA"
+   }
+]

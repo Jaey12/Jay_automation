@@ -1,0 +1,17 @@
+{
+    "username": "kavinkumar",
+    "email": "Kavinkingv",
+    "password": "Kavin@9894",
+    "cnfmpassword": "Kavin@9894",
+    "secQue": "What is your favourite food?",
+    "motherName": "Revathi",
+    "secQueAns": "ChickenRice",
+    "mobile": "6385667529",
+    "day": "16",
+    "month": "JUL",
+    "year": "1996",
+    "country": "India",
+    "city": "Chennai",
+    "expcheckAvail":"Yippie! The ID you've chosen is available.",
+    "verifyOtp": "Verify OTP"
+}

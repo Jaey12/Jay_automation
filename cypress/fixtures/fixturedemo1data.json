@@ -1,0 +1,18 @@
+[
+
+    {
+        "url": "http://mytestingthoughts.com/Sample/home.html",
+        "FirstName": "John",
+        "LastName": "Robert",
+        "Gender": "Male",
+        "Hobbies": "Reading ,Singing",
+        "Department": "MCR",
+        "Username": "qwerty123",
+        "Password": "Test@!123",
+        "ConfirmPassword": "Test@!123",
+        "EMail": "abcxyz@testautoxyz.com",
+        "ContactNo": "(415)8265412",
+        "AdditionalInfo":"NA"
+
+    }
+]

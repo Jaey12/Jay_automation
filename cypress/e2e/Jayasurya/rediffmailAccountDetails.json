@@ -1,0 +1,15 @@
+{
+    "fullName": "Sameer Bhagwat",
+    "rediffmailID": "sameer123",
+    "password": "Pass@1234",
+    "alternateEmail": "example@gmail.com",
+    "mobileNumber": "+919876543210",
+    "dateOfBirth": {
+        "day": "15",
+        "month": "August",
+        "year": "1990"
+    },
+    "gender": "Male",
+    "country": "India",
+    "city": "Mumbai"
+}
