@@ -1,29 +1,89 @@
-class LoginPage
+class Form
 {
 visit()
 {
-    cy.visit('http://lockton-qax.unqork.io/')
+    cy.visit('https://register.rediff.com/register/register.php?FormName=user_details')
 }
 
-fillEmail(value)
+fillFirstname(value)
 {
-const field = cy.get("#username")
+const field = cy.get("input[name^='name']")
 field.clear()
-field.type(value)
+field.type('Johnwick')
 return this
 }
 
-fillPassword(value)
+fillMailID(value)
 {
-  const field = cy.get("#password")
+  const field = cy.get("input[name^='login']")
   field.clear()
-  field.type(value)
+  field.type('johnw0203')
+  return this
+}
+CheckCA(value)
+{
+cy.get("input[value='Check availability']").click();
+}
+fillMailSuccessValidation(value)
+{
+  const field = cy.get("#check_availability")
+  field.contains("Yippie! The ID you've chosen is available.")
   return this
 }
 
+fillnewPassword(value)
+{
+  const field = cy.get("#newpasswd")
+  field.type('Johnw02067!')
+  return this
+}
+
+fillRetypePassword(value)
+{
+  const field = cy.get("#newpasswd1")
+  field.type('Johnw02067!')
+  return this
+}
+fillAlternate(value)
+{
+  cy.get("input[name^='altemail']").type("johnwick453@gmail.com");
+  return this
+}
+fillMob(value)
+{
+  const field = cy.get("#mobno")
+  field.type('7810078654')
+  return this
+}
+filldob(value)
+{
+  cy.get('select[name^="DOB_Day"]').select('10');
+  cy.get('select[name^="DOB_Month"]').select('JAN');
+  cy.get('select[name^="DOB_Year"]').select('2010');
+  return this
+}
+
+fillGender(value)
+{
+  cy.get("input[value='m']").check();
+  return this
+}
+
+fillCountry(value)
+{
+  cy.get('#country').select('India');
+  return this
+}
+fillCity(value)
+{
+  cy.get("select[name^='city']").select('Chennai');
+  return this
+}
+
+
 Submit()
 {
-    const button = cy.get("input[type='submit']")
+    const button = cy.get("#Register")
     button.click();
 }
 
@@ -31,4 +91,4 @@ Submit()
    
 }
 
-export default LoginPage
+export default Form
