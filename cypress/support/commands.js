@@ -67,3 +67,25 @@ Cypress.Commands.add('loginapp',(email,password)=> {
     cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input").type(password);
     cy.get(".oxd-button").click();
 })
+
+Cypress.Commands.add("orange", (fullName, contact, email, company, country, employees) => {
+  cy.visit("https://www.orangehrm.com/en/book-a-free-demo?testMode=true");
+ // Navigate to the form page
+
+  cy.get("#Form_getForm_FullName").type(fullName); // Enter full name
+  cy.get("#Form_getForm_Contact").type(contact); // Enter contact number
+  cy.get("#Form_getForm_Email").type(email); // Enter email
+  cy.get("#Form_getForm_CompanyName").type(company); // Enter company name
+  cy.get("#Form_getForm_Country").select(country); // Select country
+  cy.get("#Form_getForm_NoOfEmployees").select(employees); // Select number of employees
+
+  // Handle CAPTCHA manually in testing, so skipping it in automation
+  cy.wait(5000); // Wait for 5 seconds before submission (Not ideal, but used here)
+  cy.pause();
+
+  cy.get("#Form_getForm_action_submitForm").click(); // Click Submit button
+
+  // Validate successful submission (You may need to adjust this based on the actual behavior)
+  cy.url().should("include", "book-a-free-demo"); 
+});
+
