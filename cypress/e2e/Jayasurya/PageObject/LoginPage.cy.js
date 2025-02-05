@@ -52,7 +52,7 @@ fillAlternate(value)
 fillMob(value)
 {
   const field = cy.get("#mobno")
-  field.type('7810078654')
+  field.type('7810078655')
   return this
 }
 filldob(value)
@@ -85,6 +85,11 @@ Submit()
 {
     const button = cy.get("#Register")
     button.click();
+}
+VerifyOTPpage()
+{
+cy.get('#formmessagebox > div').should('have.text','OTP has been sent to 91-7810078654')
+   
 }
 
 

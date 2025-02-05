@@ -19,5 +19,6 @@ describe('POMForm1',function(){
         f2.fillCity()
         cy.pause()
         f2.Submit()
+        f2.VerifyOTPpage();
     })
     })
