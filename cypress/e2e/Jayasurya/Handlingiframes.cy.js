@@ -1,28 +1,27 @@
-describe('Handling iFrames', () => {
-
+import 'cypress-iframe'
+describe('Handling iframe', () => {
     it('Approach 1', () => {
-    cy.visit("https://the-internet.herokuapp.com");
-    cy.get("a[href='/frames']").click()
-    cy.get("a[href='/iframe']").click()
-    cy.get("div[aria-label='Close'] svg").click()
-    const iframe =cy.xpath("//iframe[@id='mce_0_ifr']")
+    cy.visit("https://demo.automationtesting.in/Frames.html");
+
+   const iframe=cy.get("#singleframe")
         .its('0.contentDocument.body')
         .should('be.visible')
-        .then(cy.wrap)
-        iframe.clear().type('Welcome{control+a}')  
-        cy.get("button[title='Bold'] span[class='tox-icon tox-tbtn__icon-wrap'] svg").click()
-    
-});
-    it('Should perform on inside get method', () => {
+        .then(cy.wrap);
 
-    cy.visit("https://the-internet.herokuapp.com/windows");
-    cy.get('.example >a').then((e)=>{
-        let url=e.prop('href');
-        cy.visit(url);
+        iframe.find("input[type='text']").type("welcome").should('have.value','welcome')
     })
-    cy.url().should('include','https://the-internet.herokuapp.com/windows/new')
-    cy.wait(2000);
-    cy.go('back')
-    cy.url().should('contain','the-internet.herokuapp.com')
-});
+
+    it('Approach 2 by using custom command', () => {
+        cy.visit("https://demo.automationtesting.in/Frames.html");
+        
+        cy.getiFrame("#singleframe").find("input[type='text']").type("welcome").should('have.value','welcome')
+    });
+
+    it('Approach 3', () => {
+        cy.visit("https://demo.automationtesting.in/Frames.html");
+        cy.frameLoaded('#singleframe')
+        cy.iframe('#singleframe').find("input[type='text']").type("welcome")
+        .should('have.value','welcome')
+    
+    });
 });

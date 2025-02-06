@@ -89,3 +89,10 @@ Cypress.Commands.add("orange", (fullName, contact, email, company, country, empl
   cy.url().should("include", "book-a-free-demo"); 
 });
 
+Cypress.Commands.add('getiFrame', (iframe)=>{
+  return cy.get(iframe)
+  .its('0.contentDocument.body')
+  .should('be.visible')
+  .then(cy.wrap);
+})
+
