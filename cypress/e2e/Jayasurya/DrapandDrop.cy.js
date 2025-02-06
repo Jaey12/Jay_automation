@@ -1,4 +1,5 @@
 import '@4tw/cypress-drag-drop';
+import { it } from 'mocha';
 
 describe('File uploads ',()=>{
 
@@ -20,8 +21,5 @@ describe('File uploads ',()=>{
         cy.wait(3000)
         cy.get("#box7").should('be.visible').drag("#box107",{force: true})
     })
-    
-
-
 
 })

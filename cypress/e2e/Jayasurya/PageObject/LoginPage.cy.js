@@ -88,7 +88,7 @@ Submit()
 }
 VerifyOTPpage()
 {
-cy.get('#formmessagebox > div').should('have.text','OTP has been sent to 91-7810078654')
+cy.get('#formmessagebox > div').should('have.text','OTP has been sent to 91-7810078655')
    
 }
 

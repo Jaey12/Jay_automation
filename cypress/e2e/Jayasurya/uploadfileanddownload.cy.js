@@ -1,5 +1,5 @@
 import 'cypress-file-upload';
-
+import 'cypress-drag-drop';
 
 describe("File Upload Test", () => {
     it("Single file Upload", () => {
@@ -36,7 +36,7 @@ describe("File Upload Test", () => {
         cy.get("#filesToUpload").attachFile(["1-MB.pdf","fileuploadjay.pdf"])
     });
 
-    it.only('File Download using cypress-downloadfile npm package', () => {
+    it('File Download using cypress-downloadfile npm package', () => {
         cy.downloadFile('https://www.learningcontainer.com/wp-content/uploads/2020/04/sample-text-file.txt',
             'cypress/fixtures/download', 'test.txt')
         cy.readFile('cypress/fixtures/Download/test.txt').should('contain', 'Lorem ipsum dolor sit amet')    
