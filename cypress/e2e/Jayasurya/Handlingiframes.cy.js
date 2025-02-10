@@ -24,4 +24,31 @@ describe('Handling iframe', () => {
         .should('have.value','welcome')
     
     });
+
+    it.only('Click Action', () => {
+        cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/iframepage");
+    
+        cy.xpath("//iframe[@id='myFrame']")
+          .its('0.contentDocument.body')
+          .should('not.be.empty')
+          .then(cy.wrap)
+          .find("input[value='Submit the form']") // Fixed selector
+          .should('be.visible')
+          .click();
+    });
+
+    it.only('Click Checkbox', () => {
+        cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/iframepage");
+    
+        cy.xpath("//iframe[@id='myFrame']")
+      .its('0.contentDocument.body')
+      .should('not.be.empty')
+      .then(cy.wrap)
+      .within(() => { 
+          // Use within() to scope inside the iframe
+          cy.get("input[value='Cats']").should('be.visible').check();
+          cy.get("input[value='Birds']").should('be.visible').check();
+      });
+    
+});
 });
