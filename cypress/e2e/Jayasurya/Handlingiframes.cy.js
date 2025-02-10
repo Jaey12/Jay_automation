@@ -25,7 +25,7 @@ describe('Handling iframe', () => {
     
     });
 
-    it.only('Click Action', () => {
+    it('Click Action', () => {
         cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/iframepage");
     
         cy.xpath("//iframe[@id='myFrame']")
@@ -37,7 +37,7 @@ describe('Handling iframe', () => {
           .click();
     });
 
-    it.only('Click Checkbox', () => {
+    it('Click Checkbox', () => {
         cy.visit("https://qaboxletstestcypresspracticesite.netlify.app/iframepage");
     
         cy.xpath("//iframe[@id='myFrame']")
