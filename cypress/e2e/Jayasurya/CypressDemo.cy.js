@@ -38,7 +38,7 @@ describe('QA Automation Demo', () => {
     });
        
     it('Selecting checkbox using Custom command', () => {
-        cy.checkbox();  // Calls a custom Cypress command for checkbox selection
+        cy.checkbox(); // Calls a custom Cypress command for checkbox selection
     });
 
     it('Selecting and Asserting dropdown using POM', () => {
