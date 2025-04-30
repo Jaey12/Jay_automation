@@ -1,0 +1,48 @@
+describe('HeyMax',() =>{
+    before(()=>{
+        cy.heymaxlogin();
+    })
+
+    it('Validating URL', () => {
+        cy.wait(8000)
+        cy.get("svg[width='100']").should('be.visible');
+        cy.wait(8000)
+        cy.get('#home-page-hub-carousel > :nth-child(3) > .relative > .flex').should('be.visible').click();
+        cy.wait(10000)
+        //Filter for High Reward
+        cy.get('.mx-auto > .w-full.gap-3 > .relative').click({force:true});
+        cy.wait(8000)
+        cy.get('#best_mpd > .flex > .h-full').click({force:true});
+        cy.wait(8000)
+        cy.xpath("//p[normalize-space()='15000 Max Miles']").should('contain', "15000 Max Miles");
+        cy.wait(8000)
+
+        //Validating all tabs
+        cy.xpath("//p[normalize-space()='Business & Professional Services']").click()
+        cy.wait(8000);
+        cy.xpath("//p[normalize-space()='Travel & Transportation']").click()
+        cy.wait(8000)
+        cy.xpath("//p[normalize-space()='Retail & Shopping']").click()
+        cy.wait(8000)
+        cy.xpath("//p[normalize-space()='Health, Beauty & Wellness']").click()
+        cy.wait(8000)
+        cy.xpath("//p[normalize-space()='Technology & Electronics']").click()
+        cy.wait(8000)
+        cy.xpath("//p[normalize-space()='Entertainment & Education']").click()
+        cy.wait(8000)
+
+        //Validating shopee screen
+        cy.xpath("//p[normalize-space()='Retail & Shopping']").click()
+        cy.wait(8000)
+        cy.xpath("//span[normalize-space()='Shopee']").click()
+        cy.wait(5000)
+        cy.xpath("//h1[normalize-space()='Shopee']").should('have.text', "Shopee")
+        cy.wait(3000)
+        cy.xpath("//div[@class='flex items-center justify-end gap-4']//div[1]//*[name()='svg']").click();
+        cy.wait(3000)
+        cy.xpath("//p[@class='text-lg font-medium text-").should('have.text', "Shopee is saved to your collection.")
+        cy.wait(3000)
+        //cy.get("")
+    })
+
+}) 
